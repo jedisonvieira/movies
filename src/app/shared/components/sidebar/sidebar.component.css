@@ -1,0 +1,19 @@
+.drawer-container {
+    height: 100vh;
+ }
+ 
+ .drawer {
+    width: 200px;
+ }
+ 
+.sidenav-content {
+  display: flex;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+}
+
+mat-nav-list a,
+button {
+   font-size: 16px;
+}

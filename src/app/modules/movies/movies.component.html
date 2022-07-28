@@ -1,0 +1,31 @@
+<div>
+  <h2>Movies list</h2>
+</div>
+
+<div>
+  <div class="inputs-container">
+    <mat-form-field>
+      <mat-label> Filter by year </mat-label>
+      <input
+        matInput
+        autofocus
+        name="year"
+        type="number"
+        autocomplete="off"
+        [(ngModel)]="yearIpt"
+        (keyup.enter)="search()"
+      />
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Choose one</mat-label>
+      <mat-select (selectionChange)="yearSelect($event.value)">
+        <mat-option> -- </mat-option>
+        <mat-option value="true"> Yes </mat-option>
+        <mat-option value="false"> No </mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+
+  <app-movies-table></app-movies-table>
+</div>

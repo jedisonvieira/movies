@@ -1,0 +1,21 @@
+<mat-card>
+  <h3>Winner movies by year</h3>
+  <div class="search-container">
+    <mat-form-field>
+      <mat-label> Filter by year </mat-label>
+      <input
+        matInput
+        autofocus
+        name="year"
+        type="number"
+        autocomplete="off"
+        [(ngModel)]="yearIpt"
+        (keyup.enter)="search()"
+      />
+    </mat-form-field>
+    <button mat-raised-button color="primary" (click)="search()">
+      <mat-icon>search</mat-icon>
+    </button>
+  </div>
+  <app-winner-movie-table></app-winner-movie-table>
+</mat-card>

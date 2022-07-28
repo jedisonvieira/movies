@@ -1,0 +1,34 @@
+.mat-table {
+  min-width: 100%;
+  overflow: auto;
+}
+
+.paginator {
+  width: 100%;
+  height: 40px;
+  max-height: 40px;
+}
+
+.mat-row:hover {
+  background-color: lightgrey;
+}
+
+table {
+  font-size: 14px;
+}
+
+.table-header {
+  color: indigo;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.column {
+  min-width: 150px;
+  text-align: center;
+}
+
+.table-container {
+  max-height: 750px;
+  overflow: auto;
+}
