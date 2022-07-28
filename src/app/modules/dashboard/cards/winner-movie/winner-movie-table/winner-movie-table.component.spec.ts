@@ -1,6 +1,6 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
-
 import { WinnerMovieTableComponent } from './winner-movie-table.component';
+import { HttpClientTestingModule } from '@angular/common/http/testing';
+import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 describe('WinnerMovieTableComponent', () => {
   let component: WinnerMovieTableComponent;
@@ -8,16 +8,16 @@ describe('WinnerMovieTableComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ WinnerMovieTableComponent ]
-    })
-    .compileComponents();
+      imports: [HttpClientTestingModule],
+      declarations: [WinnerMovieTableComponent],
+    }).compileComponents();
 
     fixture = TestBed.createComponent(WinnerMovieTableComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
 
-  /*it('should create', () => {
-    //expect(component).toBeTruthy();
-  });*/
+  it('should create', () => {
+    expect(component).toBeTruthy();
+  });
 });

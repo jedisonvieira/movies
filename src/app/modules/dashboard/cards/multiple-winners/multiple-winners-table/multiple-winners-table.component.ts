@@ -22,7 +22,7 @@ export class MultipleWinnersTableComponent implements OnInit {
     this.setUpDefaultTable();
   }
 
-  public async setUpDefaultTable(): Promise<void> {
+  public setUpDefaultTable(): void {
     this.movieService
       .getMoviesByProjection(ParamEnums.YEARS_WITH_MULTIPLE_WINNERS)
       .subscribe((data: any) => {
@@ -30,7 +30,7 @@ export class MultipleWinnersTableComponent implements OnInit {
       });
   }
 
-  public async setDataSource(wincounts: MultipleWinner[]): Promise<void> {
+  public setDataSource(wincounts: MultipleWinner[]): void {
     this.dataSource = new MatTableDataSource(wincounts);
   }
 }

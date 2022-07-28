@@ -1,5 +1,5 @@
+import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
 import { MoviesTableComponent } from './movies-table.component';
 
 describe('MoviesTableComponent', () => {
@@ -8,16 +8,16 @@ describe('MoviesTableComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ MoviesTableComponent ]
-    })
-    .compileComponents();
+      imports: [HttpClientTestingModule],
+      declarations: [MoviesTableComponent],
+    }).compileComponents();
 
     fixture = TestBed.createComponent(MoviesTableComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
 
-  /*it('should create', () => {
-    //expect(component).toBeTruthy();
-  });*/
+  it('should create', () => {
+    expect(component).toBeTruthy();
+  });
 });

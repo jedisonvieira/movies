@@ -1,6 +1,6 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
-
 import { TopStudiosTableComponent } from './top-studios-table.component';
+import { HttpClientTestingModule } from '@angular/common/http/testing';
+import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 describe('TopStudiosTableComponent', () => {
   let component: TopStudiosTableComponent;
@@ -8,16 +8,16 @@ describe('TopStudiosTableComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ TopStudiosTableComponent ]
-    })
-    .compileComponents();
+      imports: [HttpClientTestingModule],
+      declarations: [TopStudiosTableComponent],
+    }).compileComponents();
 
     fixture = TestBed.createComponent(TopStudiosTableComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
 
-  /*it('should create', () => {
-    //expect(component).toBeTruthy();
-  });*/
+  it('should create', () => {
+    expect(component).toBeTruthy();
+  });
 });
