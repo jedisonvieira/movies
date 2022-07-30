@@ -8,7 +8,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root',
 })
 export class MovieService {
-  private url: string = 'https://tools.texoit.com/backend-java/api/movies';
+  public url: string = 'https://tools.texoit.com/backend-java/api/movies';
 
   constructor(public http: HttpClient) {}
 
@@ -16,8 +16,8 @@ export class MovieService {
     const params: HttpParams = new HttpParams()
       .set('page', param.page ? param.page : ParamEnums.DEFAULT_PAGE)
       .set('size', param.size ? param.size : ParamEnums.DEFAULT_SIZE)
-      .set('year', param.year ? param.year : '')
-      .set('winner', param.winner ? param.winner : '');
+      .set('year', param.year ? param.year : ParamEnums.DEFAULT_YEAR)
+      .set('winner', param.winner ? param.winner : ParamEnums.DEFAULT_WINNER);
 
     return this.http.get(this.url, { params });
   }
