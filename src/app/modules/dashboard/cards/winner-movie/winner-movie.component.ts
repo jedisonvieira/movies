@@ -18,6 +18,7 @@ export class WinnerMovieComponent {
   public search(): void {
     if (this.yearIpt) {
       const params: MovieParam = {
+        winner: 'true',
         year: this.yearIpt.toString(),
       };
 

@@ -1,6 +1,7 @@
 import { TopStudiosTableComponent } from './top-studios-table.component';
 import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { MatTableModule } from '@angular/material/table';
 
 describe('TopStudiosTableComponent', () => {
   let component: TopStudiosTableComponent;
@@ -8,7 +9,7 @@ describe('TopStudiosTableComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [HttpClientTestingModule],
+      imports: [HttpClientTestingModule, MatTableModule],
       declarations: [TopStudiosTableComponent],
     }).compileComponents();
 
@@ -19,5 +20,12 @@ describe('TopStudiosTableComponent', () => {
 
   it('should create', () => {
     expect(component).toBeTruthy();
+  });
+
+  it('should have two columns - name and win count', () => {
+    const validColumns = ['name', 'winCount'];
+
+    expect(component.displayedColumns.length).toBe(2);
+    expect(component.displayedColumns).toEqual(validColumns);
   });
 });

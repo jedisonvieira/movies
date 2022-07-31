@@ -1,6 +1,7 @@
+import { MultipleWinnersTableComponent } from './multiple-winners-table.component';
 import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { MultipleWinnersTableComponent } from './multiple-winners-table.component';
+import { MatTableModule } from '@angular/material/table';
 
 describe('MultipleWinnersTableComponent', () => {
   let component: MultipleWinnersTableComponent;
@@ -8,7 +9,7 @@ describe('MultipleWinnersTableComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [HttpClientTestingModule],
+      imports: [HttpClientTestingModule, MatTableModule],
       declarations: [MultipleWinnersTableComponent],
     }).compileComponents();
 
@@ -18,6 +19,13 @@ describe('MultipleWinnersTableComponent', () => {
   });
 
   it('should create', () => {
-    //expect(component).toBeTruthy();
+    expect(component).toBeTruthy();
+  });
+
+  it('should have two columns - year and winner count', () => {
+    const validColumns = ['year', 'winnerCount'];
+
+    expect(component.displayedColumns.length).toBe(2);
+    expect(component.displayedColumns).toEqual(validColumns);
   });
 });

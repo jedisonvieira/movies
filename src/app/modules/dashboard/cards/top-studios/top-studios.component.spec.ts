@@ -1,6 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
 import { TopStudiosComponent } from './top-studios.component';
+import { MatCardModule } from '@angular/material/card';
 
 describe('TopStudiosComponent', () => {
   let component: TopStudiosComponent;
@@ -8,9 +8,9 @@ describe('TopStudiosComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ TopStudiosComponent ]
-    })
-    .compileComponents();
+      imports: [MatCardModule],
+      declarations: [TopStudiosComponent],
+    }).compileComponents();
 
     fixture = TestBed.createComponent(TopStudiosComponent);
     component = fixture.componentInstance;
@@ -19,5 +19,17 @@ describe('TopStudiosComponent', () => {
 
   it('should create', () => {
     expect(component).toBeTruthy();
+  });
+
+  it('should have the correct title', () => {
+    const compiled = fixture.nativeElement as HTMLElement;
+    expect(compiled.querySelector('h3')?.textContent).toContain(
+      'Top 3 studios with winners'
+    );
+  });
+
+  it('should have a top studios table', () => {
+    const compiled = fixture.nativeElement as HTMLElement;
+    expect(compiled.querySelector('app-top-studios-table')).toBeTruthy();
   });
 });

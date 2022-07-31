@@ -1,6 +1,6 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
-
 import { MaxWinIntervalTableComponent } from './max-win-interval-table.component';
+import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { MatTableModule } from '@angular/material/table';
 
 describe('MaxWinIntervalTableComponent', () => {
   let component: MaxWinIntervalTableComponent;
@@ -8,9 +8,9 @@ describe('MaxWinIntervalTableComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ MaxWinIntervalTableComponent ]
-    })
-    .compileComponents();
+      imports: [MatTableModule],
+      declarations: [MaxWinIntervalTableComponent],
+    }).compileComponents();
 
     fixture = TestBed.createComponent(MaxWinIntervalTableComponent);
     component = fixture.componentInstance;
@@ -19,5 +19,17 @@ describe('MaxWinIntervalTableComponent', () => {
 
   it('should create', () => {
     expect(component).toBeTruthy();
+  });
+
+  it('should have four columns - producer,interval,previousWin,followingWin', () => {
+    const validColumns = [
+      'producer',
+      'interval',
+      'previousWin',
+      'followingWin',
+    ];
+
+    expect(component.displayedColumns.length).toBe(4);
+    expect(component.displayedColumns).toEqual(validColumns);
   });
 });
