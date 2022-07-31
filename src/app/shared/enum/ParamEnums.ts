@@ -1,3 +1,5 @@
+//DEFAULT_SIZE was set to 100 for performance purposes
+
 export enum ParamEnums {
   DEFAULT_SIZE = '100',
   DEFAULT_PAGE = '0',
